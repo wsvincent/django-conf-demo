@@ -1,9 +1,6 @@
 # PyCharm
 .idea/
 
-# Database
-# normally would include db.sqlite3 here but including it for quick demo purposes
-
 # Python
 __pycache__/
 *.py[cod]
