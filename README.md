@@ -27,61 +27,13 @@ PyCharm is "batteries-included" just like Django.
 
 ## Features
 
+### Templates
+- Click on `templates/index.html` to show live preview, click through question/answer
+
 ### Databases
 - Super lazy & visual way to explore databases
 - Click database icon -> drag & drop `db.sqlite3` into it to make the connection
 - At a glance see everything, tables/columns
-
-
-
-
-
-
-## Junie
-- write tests for me
-
-## AI Assistant
-
-
-
-### Explore Project
-- Templates live loading
-- Database visuals
-- Autocomplete
-- Endpoints?
-- Frontend support?
-- Version Control
-
-
-### Templates
-- Visual live view
-- Write template name in view, create from there. 
-- PyCharm detect template files with autocomplete
-
-
-
-
-
-
-
-
-
-
-### 2. Running Django Server
-
-
-
-
-Templates
-
-
-Database
-
-
-Endpoints
-
-Frontend Support
-
 
 ### Version Control
 * Local History
@@ -93,12 +45,33 @@ Frontend Support
   * Bottom section, click Git icon to see all previous commits on current branch
 * GitHub, GitLab, etc integrations
 
+### Breakpoints & Debugger
+* Set a breakpoint in `views.py` for `def vote...` next to `question = ..` by click gutter for red circle
+* Hit bug icon next to Green server to start in debug mode
+* Run local server at polls, click through a vote
+* Note info displayed in thread process
 
-### IDE Features for Django
+### IDE
 * Autocomplete
+  * `Shift-Shift INS` to navigate to `INSTALLED_APS` in `mysite/settings.py`
+  * Make a typo and show warning, ex type `newapp` at bottom of `INSTALLED_APPS` list
+* Refactor
+  * `Shift-Shift Indv` to navigate to `polls.views.IndexView`
+  * Rename `index.html` to `djindex.html`, point out filename has changed, yellow warning lines
+
+### Junie
+- tk
+
+### AI Assistant
+- tk
 
 
-## Suggestions Questions
+### Questions to Resolve...
+- Endpoints: adding API too complicated?
+- Frontend: worth adding dedicated JS to demo WebStorm stuff?
+
+
+## Suggestions Questions for the Admin
 
 1. What is the current version of Django?
    * 5.1
