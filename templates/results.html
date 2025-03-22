@@ -1,13 +1,16 @@
-{% load static %}
+{% extends "base.html" %}
 
-<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+{% block title %}Poll Results{% endblock %}
 
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-       <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+{% block content %}
+  <h2>{{ question.question_text }}</h2>
+  <ul class="list-group">
+    {% for choice in question.choice_set.all %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ choice.choice_text }}
+        <span class="badge bg-primary rounded-pill">{{ choice.votes }} vote{{ choice.votes|pluralize }}</span>
+      </li>
     {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+  </ul>
+  <a class="btn btn-link mt-3" href="{% url 'polls:index' %}">Back to polls</a>
+{% endblock %}
