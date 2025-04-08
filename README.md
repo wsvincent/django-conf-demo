@@ -4,6 +4,14 @@ Uses the official [Django polls tutorial](https://docs.djangoproject.com/en/5.2/
 ## tl;dr
 PyCharm is "batteries-included" just like Django. That means for almost any task you have, there is a built-in feature to save you time, you just need to know where to look. But it can feel overwhelming when starting out, so let me demo the highlights:
 
+* Fast Project Setup
+* IDE & Framework-specific features
+* Debugging & Testing
+* Template Support
+* Database integration and visualization
+* Advanced Version Control
+* API Endpoints tool and more
+
 * Project Setup: jumpstart new projects with just a few clicks, virtual environment, Django install, boilerplate code
 * IDE/Framework features: framework-specific code completion, navigation, powerful search, auto imports, refactoring
 * Debugging and Testing: built-in debugger, set breakpoints, run tests
@@ -21,7 +29,7 @@ Make sure you are using 2025.1.
    * Use `Run` button to start local server and check it at `http://127.0.0.1:8000/polls/`
    * There should be 5 questions there (the `db.sqlite3` database file is included in the repo; this is not a best practice, but convenient here)
    * Go to `http://127.0.0.1:8000/admin/` and login with `admin` and `testpass123` for access to the Django admin
-   * In PyCharm Settings, search for "Black", install On Code Reformat & On Save (double quotes `""` are common in Django)
+   * In PyCharm Settings, search for "Black" under `Tools`, install On Code Reformat & On Save (double quotes `""` are common in Django)
 
 __Before starting demo, make sure local server is running by pressing "Run" button and have a web browser open at `http://127.0.0.1:8000/polls/`__
 
@@ -31,28 +39,26 @@ __Before starting demo, make sure local server is running by pressing "Run" butt
   * Make and set virtual env (highlight `uv` support)
   * Template language (Django/Jinja2) and project-level `templates` dir option
   * Installs Django into it
-* Switch to `django-conf-demo` repo and show "Django Structure" in left sidebar. Key info you need:
+* Switch to `django-conf-demo` repo and show "Django Structure" in left sidebar. The key info you need is quickly visible:
   * Global `settings.py` file
   * All Admin, Models, Views in one place
   * Easy to navigate especially in larger real-world project
 
 ## Feature 2: Django Server + Templates
-* Run Server with Green Run button
-  * Click `http://127.0.0.1:8000/` link in Run menu on bottom (also show Red Stop and Green Run buttons in top nav)
 * `Shift-Shift` to `polls.html` to open `templates/polls.html`
-* Click on "Refresh to see preview" and load page
+* Click on "Run django-conf-demo" to start server and see the page
+  * Depending on the visitor, can be fun to go through these questions, demo the Polls tutorial if they're not already familiar
 * Remove "<p>Conference demo...</p>" text and show live preview auto updates (saves time and switching windows)
-* Select Terminal -> drop down arrow for `manage.py` to run `makemigrations` or `migrate`, which are part of the normal flow whenever making changes to a Django model
 
 ## Feature 3: Database Support
 * At a glance visualize your entire database, tables/columns/etc
-* Click `Database` icon and double-click on the `polls_question` table to show questions
+* Click `Database` icon --> `db` --> `main` --> double-click on the `polls_question` table to show questions. Also double-click on `polls_choice` to show responses. And `auth-user` to show full User info.
+* Note that can see this info in built-in admin, but quick view within IDE to not breakup your flow
 * Should auto-detect but can also drag/drop `db.sqlite3` over there to establish a connection
-* Double-click on `auth-user` to show full User info, too
 
 ## Feature 4: IDE Features for Django 
 * Autocomplete
-  * `Shift-Shift INS` to navigate to `INSTALLED_APS` in `mysite/settings.py`
+  * `Shift-Shift INST` to navigate to `INSTALLED_APS` in `mysite/settings.py`
   * Make a typo and show warning, ex type `newapp` at bottom of `INSTALLED_APPS` list
 * Refactor
   * `Shift-Shift Index` to navigate to `polls.views.IndexView`
@@ -67,59 +73,27 @@ __Before starting demo, make sure local server is running by pressing "Run" butt
   * GitHub and GitLab integrations too for easy workflow
 
 ## Feature 5: Testing & Debugging
-* `Shift Shift` to `tests.py` to open `polls/tests.py`
-Debugging starts with Breakpoints, markers that tell the debugger to suspend execution of the program (click gutter in line where to add or Command+F8)
-* Run via Bug button or right click Debug for temporary run config
-
-
-
-
-* Click the Run Gutter Icon to run just that test 
-
-* Run server with debugger, not a big speed hit HERE!!!!!!!!!!
-  * Stop server (Red Stop Sign) -> Restart with Debugger
-  * Set breakpoints in:
-    * `polls.views.IndexView.get_queryset`
-    * Also in `polls.templates/polls/index.html`
-      * Inside `{% for question in latest_question_list %}`
-    * Reload the page at `/polls/`
-    * Show step through Python and Django
-    * Clear the breakpoints and resume
-
-* Breakpoints and debug session...
-* debug tool window
-* debugger and console tabs
-* step through code
-
-
-
-
+* Basic Testing:
+  * `Shift Shift` to `tests.py` to open `polls/tests.py`
+  * Run all tests quickly by selecting "Current File" at top and click `RUN` button 
+  * Click the gutter icon to run just that test for `class QuestionModelTests(TestCase)`
+* Coverage Support:
+  * In top nav, click the 3 dots to the right of Debugger and select "Run Tests with Coverage". Will install Coverage if not already.
+  * Run tests with coverage --> see report. If go to `polls/views.py` areas NOT covered will be in red vs green if covered by tests
+* Debugger:
+  * PyCharm has a powerful built-in debugger where we can set Breakpoints to suspend execution of a program and dive in 
+  * Go to `polls/views.py` and set a gutter breakpoint within `IndexView` at `return Question.objects.filter`
+    * Start the Debugger via the Bug icon in top nav
+    * Refresh the page at `http://127.0.0.1:8000/polls/` and then view Debug in bottom console, note "Threads and Variables" to view full debug information about the code (in this case, works as expected)
+  * Clear the breakpoint in `polls/views.py` and resume
 
 ## Feature 6: API Endpoints
-* Click `Endpoints` icon on right navbar to open existing ones
-* Note that if building out DRF or `django-ninja` API can quickly see
+* Open `polls/urls.py` file and click "Endpoints" icon in right navbar
+  * Shows existing endpoints, HTTP methods, related file
+* If building out APIs with Django REST Framework or `django-ninja` can quickly see
     https://youtu.be/xanrdSKV1k4?si=1KGl7mAjiaj7gZE2 Paul's video
 
-
-
-
-
-
-
-### Breakpoints & Debugger
-* Set a breakpoint in `views.py` for `def vote...` next to `question = ..` by click gutter for red circle
-* Hit bug icon next to Green server to start in debug mode
-* Run local server at polls, click through a vote
-* Note info displayed in thread process
-
-
-
---------------------------------------------------------------------------
-### Questions to Resolve...
-- Endpoints: adding API too complicated?
-- Frontend: worth adding dedicated JS to demo WebStorm stuff?
-
-
+----------------------------------------------------------  
 ## Suggestions Questions for the Admin
 
 1. What is the current version of Django?
