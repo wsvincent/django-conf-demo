@@ -12,14 +12,6 @@ PyCharm is "batteries-included" just like Django. That means for almost any task
 * Advanced Version Control
 * API Endpoints tool and more
 
-* Project Setup: jumpstart new projects with just a few clicks, virtual environment, Django install, boilerplate code
-* IDE/Framework features: framework-specific code completion, navigation, powerful search, auto imports, refactoring
-* Debugging and Testing: built-in debugger, set breakpoints, run tests
-* Template Support: live previews, issues highlighted immediately, full JavaScript/TypeScript support via WebStorm
-* Database: one-click connections and visualizations
-* Version control: local history, Git support, visualizations, integrations with GitHub and GitLab
-* Endpoints tool...
-
 ## Set up for PyCharm demo (2025.1)
 Make sure you are using 2025.1.
 
