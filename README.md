@@ -101,8 +101,9 @@ class Comment(models.Model):
 * This code option works, it is a basic model for a Comment that has a Foreign Key relationship to the `Question` model and a field for `comment_text`.
 * Can note that to fully add this feature would need to add a related `views.py` file, template file, and update `polls/urls.py` to display it.
 * The point is not that code completion writes all your code for you, but rather that PyCharm is smart enough to guess common use cases and save you from typing.
+* Use `Ctrl-z` to revert changes to `models.py` before continuing.
 
-## Feature 5: Testing & Debugging
+## Feature 5: Testing 
 In this part of the demo, we will be showing:
 * How PyCharm supports testing and coverage all within the IDE
 
@@ -140,12 +141,12 @@ In this part of the demo, we will be showing:
 * This is just a taste of PyCharm's support for Django. PyCharm makes your existing workflow faster and easier to use, all within the IDE.
 
 ----------------------------------------------------------  
-## Suggestions Questions for the Admin
+## Questions in the Polls App
 
 1. What is the current version of Django?
-   * 5.1
-   * 5.2 (answer)
-   * 6.0
+  * 5.1
+  * 5.2 (answer)
+  * 6.0
 
 2. Django was initially developed at which organization?
   * NASA
@@ -153,9 +154,9 @@ In this part of the demo, we will be showing:
   * A newspaper (answer)
 
 3. Which of these is not a built-in Django management command?
-   * `makemigrations`
-   * `makemagic` (answer)
-   * `migrate`
+  * `makemigrations`
+  * `makemagic` (answer)
+  * `migrate`
 
 4. What is Django's default database engine?
   * PostgreSQL
