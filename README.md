@@ -57,7 +57,7 @@ In this part of the demo we will be showing:
 * Type `Shift-Shift` to open Search Everywhere feature and type `polls.html` to open the  `templates/polls.html` template file.
 * PyCharm will open the file and a side window with live preview. Click on "Run Django" to start the local server and see the page (it's `polls/` if you must specify the URL).
 * Ask at least one of the questions to the visitor and show how you can select the question, select a response, and then navigate back to the main Polls page all within the IDE. (Correct answers are at the bottom of this Readme.)
-* Demonstrate live updates by going to the `polls.html` file and remove the "<p>Conference demo...</p>" text from the `polls.html` file. Show how live preview auto updates. This saves time and removes the need to switch windows constantly. 
+* Demonstrate live updates by going to the `polls.html` file and remove the `<p>Conference demo...</p>` text from the `polls.html` file. Show how live preview auto updates. This saves time and removes the need to switch windows constantly. 
 * Use `Ctrl+z` to add the text back before continuing on so you can reuse it for the next demo.
 
 ## Feature 3: Database Tool Window
