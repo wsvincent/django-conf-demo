@@ -12,6 +12,9 @@ __pycache__/
 *.log
 *.pot
 *.pyc
-# db.sqlite3
+db.sqlite3
 media/
 staticfiles/
+
+# MacOS
+.DS_Store
