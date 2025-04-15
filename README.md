@@ -8,24 +8,27 @@ PyCharm is "batteries-included" just like Django. That means for almost any task
 * Live Templates 
 * Database Tool Window
 * Code Completion
-* Testing and Debugging 
+* Testing 
+* Debugging 
+
+Mention all of them upfront in case the visitor has a particular interest.
 
 ## Set up for PyCharm demo (2025.1)
 Make sure you are using 2025.1.
 
 1. Clone the repo to your local computer. From a new terminal window:
-   * `$ git clone https://github.com/wsvincent/django-conf-demo.git`
+   * `git clone https://github.com/wsvincent/django-conf-demo.git`
 2. In PyCharm:
    * Use the `Run` button to start the local server and check it out at `http://127.0.0.1:8000/`
    * There should be 5 questions there (the `db.sqlite3` database file is included in the repo; this is not a best practice, but convenient here)
    * Go to `http://127.0.0.1:8000/admin/` and login with `admin` and `testpass123` for access to the Django admin
    * In PyCharm Settings, search for "Black" under `Tools`, install On Code Reformat & On Save (double quotes, `""`, are common in Django)
 
-__Before starting demo, make sure local server is running by pressing "Run" button and have  a web browser open at `http://127.0.0.1:8000/`__
+__Before starting demo, make sure local server is running by pressing "Run" button and have a web browser open at `http://127.0.0.1:8000/`__
 
 ## Feature 1: Project Setup
 In this part of the demo we will be showing:
-* How PyCharm allows for fast Django/Flask/FastAPI project setup
+* How PyCharm allows for fast Django project setup
 * Django Structure Tool window for quick navigation
 
 ### Why is this important?
@@ -55,7 +58,7 @@ In this part of the demo we will be showing:
 
 ### Steps in demo
 * Type `Shift-Shift` to open Search Everywhere feature and type `polls.html` to open the  `templates/polls.html` template file.
-* PyCharm will open the file and a side window with live preview. Click on "Run Django" to start the local server and see the page (it's `polls/` if you must specify the URL).
+* PyCharm will open the file and a side window with live preview. Click on "Run Django" to start the local server and see the page.
 * Ask at least one of the questions to the visitor and show how you can select the question, select a response, and then navigate back to the main Polls page all within the IDE. (Correct answers are at the bottom of this Readme.)
 * Demonstrate live updates by going to the `polls.html` file and remove the `<p>Conference demo...</p>` text from the `polls.html` file. Show how live preview auto updates. This saves time and removes the need to switch windows constantly. 
 * Use `Ctrl+z` to add the text back before continuing on so you can reuse it for the next demo.
